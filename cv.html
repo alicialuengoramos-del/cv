@@ -202,11 +202,28 @@
     .btn:hover{filter:brightness(1.08)}
 
     /* Print */
-    @media print{
-      body{background:#fff; color:#111}
-      .hero-card, section, .contact{box-shadow:none}
-      a{color:#111}
-    }
+   @media print {
+  body, .wrap, .hero-card, section, .contact {
+    background:#fff !important;
+    color:#000 !important;
+    box-shadow:none !important;
+  }
+  .hero-card::after,
+  .chip,
+  .tag,
+  .dot,
+  .mark {
+    background:none !important;
+    box-shadow:none !important;
+  }
+  h1,h2,h3,p,span,a,small {
+    color:#000 !important;
+  }
+  a{text-decoration:none !important;}
+  .hero { grid-template-columns:1fr !important; }
+  .grid { grid-template-columns:1fr !important; }
+  .btn { display:none !important; } /* Oculta botones en PDF */
+}
   </style>
 </head>
 <body>
